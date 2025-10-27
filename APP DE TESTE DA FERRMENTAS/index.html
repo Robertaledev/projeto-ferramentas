@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Ferramentas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛠️ Sistema de Controle de Ferramentas</h1>
+        
+        <div class="form-section">
+            <h2>➕ Adicionar Ferramenta</h2>
+            <input type="text" id="nome" placeholder="Nome da ferramenta" required>
+            <input type="number" id="quantidade" placeholder="Quantidade" min="1" required>
+            <input type="text" id="localizacao" placeholder="Localização" required>
+            <button onclick="adicionarFerramenta()">Adicionar</button>
+        </div>
+        
+        <div class="form-section">
+            <h2>🔄 Emprestar/Devolver Ferramenta</h2>
+            <input type="text" id="nomeAcao" placeholder="Nome da ferramenta" required>
+            <input type="number" id="quantidadeAcao" placeholder="Quantidade" min="1" required>
+            <input type="text" id="solicitante" placeholder="Nome do solicitante (para empréstimo)" id="solicitante">
+            <button onclick="emprestarFerramenta()">Emprestar</button>
+            <button onclick="devolverFerramenta()">Devolver</button>
+        </div>
+        
+        <div class="inventory-section">
+            <h2>📋 Inventário</h2>
+            <button onclick="visualizarInventario()">Atualizar Inventário</button>
+            <table id="inventarioTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Localização</th>
+                    </tr>
+                </thead>
+                <tbody id="inventarioBody">
+                    <!-- Itens serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="history-section">
+            <h2>📜 Histórico de Empréstimos</h2>
+            <button onclick="visualizarHistorico()">Ver Histórico</button>
+            <ul id="historicoList">
+                <!-- Histórico será inserido aqui -->
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
